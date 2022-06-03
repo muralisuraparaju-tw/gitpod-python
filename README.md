@@ -6,7 +6,7 @@ This is a [PySpark](https://spark.apache.org/docs/latest/api/python/) template c
 
 Click the button below to start a new development environment:
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/template-python-django)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/muralisuraparaju-tw/gitpod-python)
 
 ## Get Started With Your Own Project
 
