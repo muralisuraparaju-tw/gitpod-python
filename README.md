@@ -1,6 +1,6 @@
-# A Python Django template on Gitpod
+# A PySpark/Jupyter template on Gitpod
 
-This is a [Python Django](https://www.djangoproject.com) template configured for ephemeral development environments on [Gitpod](https://www.gitpod.io/).
+This is a [PySpark](https://spark.apache.org/docs/latest/api/python/) template configured for ephemeral development environments on [Gitpod](https://www.gitpod.io/).
 
 ## Next Steps
 
