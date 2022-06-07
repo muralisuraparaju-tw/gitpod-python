@@ -2,7 +2,7 @@
 from pyspark.sql import SparkSession
 
 STORAGE_ACCOUNT_NAME = "backstagepocdb"
-STORAGE_ACCOUNT_KEY = "GUF8m5+SylVgb6W77vEXUcx9jTrypN2muHkpAn3izu02RGkdcsQORCdfZQrPmTyFT3Is3DWDdWFH+AStJJiXkw=="
+STORAGE_ACCOUNT_KEY = ""
 CONTAINER_NAME = "hockey"
 
 FILE_NAME = "abbrev.csv"
