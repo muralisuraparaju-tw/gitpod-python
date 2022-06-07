@@ -5,6 +5,8 @@ STORAGE_ACCOUNT_NAME = "backstagepocdb"
 STORAGE_ACCOUNT_KEY = ""
 CONTAINER_NAME = "hockey"
 
+STORAGE_SAS_TOKEN="<access-token>"
+
 FILE_NAME = "abbrev.csv"
 FULL_FILE_NAME = "wasbs://"+CONTAINER_NAME+"@"+STORAGE_ACCOUNT_NAME+".blob.core.windows.net/"+FILE_NAME
 CSV_FILE_FORMAT = "csv"
@@ -15,9 +17,10 @@ def get_spark_session():
     return spark
 
 def init_adls():
-    key = "fs.azure.account.key."+STORAGE_ACCOUNT_NAME+".blob.core.windows.net"
+    # key = "fs.azure.account.key."+STORAGE_ACCOUNT_NAME+".blob.core.windows.net"
+    key = "fs.azure.sas."+CONTAINER_NAME+"."+STORAGE_ACCOUNT_NAME+".blob.core.windows.net"
     spark = get_spark_session()
-    spark.conf.set(key, STORAGE_ACCOUNT_KEY)
+    spark.conf.set(key, STORAGE_SAS_TOKEN)
 
 #### Library functions -- END
 
