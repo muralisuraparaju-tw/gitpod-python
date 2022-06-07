@@ -22,11 +22,21 @@ To get started with Python Django on Gitpod, add a [`.gitpod.yml`](./.gitpod.yml
 
 ### external jars required 
 
-these jars are specific to Java version 1.8.0_252.
+following jars are specific to Java version 1.8.0_252.
 
 wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-azure/3.3.3/hadoop-azure-3.3.3.jar
 wget https://repo1.maven.org/maven2/com/microsoft/azure/azure-storage/8.6.6/azure-storage-8.6.6.jar
 wget https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util-ajax/9.4.8.v20171121/jetty-util-ajax-9.4.8.v20171121.jar
 wget https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/9.4.46.v20220331/jetty-util-9.4.46.v20220331.jar
+venv/bin/pyspark --jars hadoop-azure-3.3.3.jar,azure-storage-8.6.6.jar
+cp *.jar venv/lib/python3.9/site-packages/pyspark/jars
+
+
+following jars are specific to Java version 1.11
+
+wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-azure/3.3.3/hadoop-azure-3.3.3.jar
+wget https://repo1.maven.org/maven2/com/microsoft/azure/azure-storage/8.6.6/azure-storage-8.6.6.jar
+wget https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util-ajax/11.0.9/jetty-util-ajax-11.0.9.jar
+wget https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/11.0.9/jetty-util-11.0.9.jar
 venv/bin/pyspark --jars hadoop-azure-3.3.3.jar,azure-storage-8.6.6.jar
 cp *.jar venv/lib/python3.9/site-packages/pyspark/jars
