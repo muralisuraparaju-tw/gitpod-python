@@ -2,13 +2,17 @@
 from pyspark.sql import SparkSession
 
 STORAGE_ACCOUNT_NAME = "backstagepocdb"
-STORAGE_ACCOUNT_KEY = ""
+STORAGE_ACCOUNT_KEY = "6cauWvr6uG5obT2I0PWkZi3+i+nbm7G4D8NtF6HkHCRgT4MNl3MfzE+2SWoTDmoNbMZ2yMypMMQo+ASt8vfJwg=="
 CONTAINER_NAME = "hockey"
 
-STORAGE_SAS_TOKEN="<access-token>"
+ACCT_KEY = "fs.azure.account.key."+STORAGE_ACCOUNT_NAME+".dfs.core.windows.net"
+SAS_KEY = "fs.azure.sas."+CONTAINER_NAME+"."+STORAGE_ACCOUNT_NAME+".blob.core.windows.net"
+
+SAS_TOKEN = "?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-06-10T11:19:12Z&st=2022-06-08T03:19:12Z&spr=https&sig=d52KoLJclRVsuHvk24JSIR4z6WHGhHV0sTVYa6E5stg%3D"
 
 FILE_NAME = "abbrev.csv"
-FULL_FILE_NAME = "wasbs://"+CONTAINER_NAME+"@"+STORAGE_ACCOUNT_NAME+".blob.core.windows.net/"+FILE_NAME
+DFS_FULL_FILE_NAME = "abfss://"+CONTAINER_NAME+"@"+STORAGE_ACCOUNT_NAME+".dfs.core.windows.net/"+FILE_NAME
+BLOB_FULL_FILE_NAME = "wasbs://"+CONTAINER_NAME+"@"+STORAGE_ACCOUNT_NAME+".blob.core.windows.net/"+FILE_NAME
 CSV_FILE_FORMAT = "csv"
 
 #### Library functions -- START
@@ -20,7 +24,8 @@ def init_adls():
     # key = "fs.azure.account.key."+STORAGE_ACCOUNT_NAME+".blob.core.windows.net"
     key = "fs.azure.sas."+CONTAINER_NAME+"."+STORAGE_ACCOUNT_NAME+".blob.core.windows.net"
     spark = get_spark_session()
-    spark.conf.set(key, STORAGE_SAS_TOKEN)
+    #spark.conf.set(ACCT_KEY, STORAGE_ACCOUNT_KEY)
+    spark.conf.set(SAS_KEY, SAS_TOKEN)
 
 #### Library functions -- END
 
@@ -47,7 +52,7 @@ def test_adls():
 
 def main():
     print("Hello")
-    test_in_memory_spark()
-    read_csv_adls(FULL_FILE_NAME, CSV_FILE_FORMAT)
+    #test_in_memory_spark()
+    read_csv_adls(BLOB_FULL_FILE_NAME, CSV_FILE_FORMAT)
 
 main()
