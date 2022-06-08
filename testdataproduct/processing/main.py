@@ -2,13 +2,13 @@
 from pyspark.sql import SparkSession
 
 STORAGE_ACCOUNT_NAME = "backstagepocdb"
-STORAGE_ACCOUNT_KEY = "6cauWvr6uG5obT2I0PWkZi3+i+nbm7G4D8NtF6HkHCRgT4MNl3MfzE+2SWoTDmoNbMZ2yMypMMQo+ASt8vfJwg=="
+STORAGE_ACCOUNT_KEY = ""
 CONTAINER_NAME = "hockey"
 
 ACCT_KEY = "fs.azure.account.key."+STORAGE_ACCOUNT_NAME+".dfs.core.windows.net"
 SAS_KEY = "fs.azure.sas."+CONTAINER_NAME+"."+STORAGE_ACCOUNT_NAME+".blob.core.windows.net"
 
-SAS_TOKEN = "?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-06-10T11:19:12Z&st=2022-06-08T03:19:12Z&spr=https&sig=d52KoLJclRVsuHvk24JSIR4z6WHGhHV0sTVYa6E5stg%3D"
+SAS_TOKEN = ""
 
 FILE_NAME = "abbrev.csv"
 DFS_FULL_FILE_NAME = "abfss://"+CONTAINER_NAME+"@"+STORAGE_ACCOUNT_NAME+".dfs.core.windows.net/"+FILE_NAME
