@@ -24,7 +24,7 @@ def init_adls():
     # key = "fs.azure.account.key."+STORAGE_ACCOUNT_NAME+".blob.core.windows.net"
     key = "fs.azure.sas."+CONTAINER_NAME+"."+STORAGE_ACCOUNT_NAME+".blob.core.windows.net"
     spark = get_spark_session()
-    #spark.conf.set(ACCT_KEY, STORAGE_ACCOUNT_KEY)
+    spark.conf.set(ACCT_KEY, STORAGE_ACCOUNT_KEY)
     spark.conf.set(SAS_KEY, SAS_TOKEN)
 
 #### Library functions -- END
